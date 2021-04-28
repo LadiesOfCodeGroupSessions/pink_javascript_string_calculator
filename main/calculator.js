@@ -1,6 +1,11 @@
-class StringCalculator{
-    Add(number){
-        return 0
+class StringCalculator {
+    Add(number) {
+        if (number === "") {
+            return 0
+        } else {
+            return Number(number)
+        }
     }
 }
+
 module.exports = StringCalculator

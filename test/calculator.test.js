@@ -7,3 +7,9 @@ test('input empty string and return 0', () => {
 
     expect(result).toBe(0)
 });
+
+test('input one number, get number back', () => {
+    calculator = new StringCalculator()
+    const result = calculator.Add("1")
+    expect(result).toBe(1);
+});

@@ -5,11 +5,9 @@ class StringCalculator {
         } else if (stringOfNumbers === "1,2") {
             let arrayOfStringNumbers = [];
             arrayOfStringNumbers = stringOfNumbers.split(",")
-            let arrayOfNumbers = [];
             var sum = 0;
             arrayOfStringNumbers.forEach(function (item, index) {
                 item = Number(item);
-                arrayOfNumbers[index] = item;
                 sum += item;
             });
             return sum;

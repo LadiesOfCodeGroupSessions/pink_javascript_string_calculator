@@ -13,3 +13,9 @@ test('input one number, get number back', () => {
     const result = calculator.Add("1")
     expect(result).toBe(1);
 });
+
+test('input 1 and 2, get 3 back', () => {
+    calculator = new StringCalculator()
+    const result = calculator.Add("1,2")
+    expect(result).toBe(3);
+});

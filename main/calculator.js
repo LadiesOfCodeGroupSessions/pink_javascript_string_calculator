@@ -3,8 +3,10 @@ class StringCalculator {
         if (stringOfNumbers === "") {
             return 0
         } else if(stringOfNumbers === "1,2"){
-            stringOfNumbers = stringOfNumbers.split(",")
-            console.log(stringOfNumbers)
+            let array = stringOfNumbers.split(",")
+           let num = array.forEach(str => Number(str))
+           return  num.reduce( (accumulator, currentValue) => accumulator + currentValue
+           ) 
 
         }
         

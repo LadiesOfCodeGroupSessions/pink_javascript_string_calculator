@@ -37,3 +37,9 @@ test('input "1\n2,3" returns 6', () => {
     const result = calculator.Add("1\n2,3");
     expect(result).toBe(6);
 })
+
+test('input "//;\n1;2" returns 3 (the delimiter is ";")', ()=>{
+    calculator = new StringCalculator(); 
+    const result = calculator.Add("//;\n1;2"); 
+    expect(result).toBe(3);
+})

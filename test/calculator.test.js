@@ -31,3 +31,9 @@ test('input 1, 2, 3 and 2 get 8 back', () => {
     const result = calculator.Add("1,2,3,2")
     expect(result).toBe(8);
 });
+
+test('input "1\n2,3" returns 6', () => {
+    calculator = new StringCalculator();
+    const result = calculator.Add("1\n2,3");
+    expect(result).toBe(6);
+})

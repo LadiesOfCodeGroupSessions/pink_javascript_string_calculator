@@ -4,7 +4,7 @@ class StringCalculator {
             return 0
         } else {
             let arrayOfStringNumbers = [];
-            arrayOfStringNumbers = stringOfNumbers.split(",")
+            arrayOfStringNumbers = stringOfNumbers.split(/[,\n]+/);
             var sum = 0;
             arrayOfStringNumbers.forEach(function (item) {
                 item = Number(item);

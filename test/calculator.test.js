@@ -19,3 +19,15 @@ test('input 1 and 2, get 3 back', () => {
     const result = calculator.Add("1,2")
     expect(result).toBe(3);
 });
+
+test('input 2 and 2, get 4 back', () => {
+    calculator = new StringCalculator()
+    const result = calculator.Add("2,2")
+    expect(result).toBe(4);
+});
+
+test('input 1, 2, 3 and 2 get 8 back', () => {
+    calculator = new StringCalculator()
+    const result = calculator.Add("1,2,3,2")
+    expect(result).toBe(8);
+});

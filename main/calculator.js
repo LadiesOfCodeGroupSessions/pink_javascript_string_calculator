@@ -1,7 +1,7 @@
 class StringCalculator {
 
 
-    Add(stringOfNumbers) {
+    add(stringOfNumbers) {
         if (stringOfNumbers === "") {
             return 0
         } else if (stringOfNumbers.substring(0, 2) === "//") {

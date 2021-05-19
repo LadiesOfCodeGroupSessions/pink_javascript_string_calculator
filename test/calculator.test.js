@@ -3,38 +3,38 @@ const StringCalculator = require("../main/calculator");
 
 test('input empty string and return 0', () => {
     calculator = new StringCalculator()
-    const result = calculator.Add("")
+    const result = calculator.add("")
 
     expect(result).toBe(0)
 });
 
 test('input one number, get number back', () => {
     calculator = new StringCalculator()
-    const result = calculator.Add("1")
+    const result = calculator.add("1")
     expect(result).toBe(1);
 });
 
 test('input 1 and 2, get 3 back', () => {
     calculator = new StringCalculator()
-    const result = calculator.Add("1,2")
+    const result = calculator.add("1,2")
     expect(result).toBe(3);
 });
 
 test('input 2 and 2, get 4 back', () => {
     calculator = new StringCalculator()
-    const result = calculator.Add("2,2")
+    const result = calculator.add("2,2")
     expect(result).toBe(4);
 });
 
 test('input 1, 2, 3 and 2 get 8 back', () => {
     calculator = new StringCalculator()
-    const result = calculator.Add("1,2,3,2")
+    const result = calculator.add("1,2,3,2")
     expect(result).toBe(8);
 });
 
 test('input "1\n2,3" returns 6', () => {
     calculator = new StringCalculator();
-    const result = calculator.Add("1\n2,3");
+    const result = calculator.add("1\n2,3");
     expect(result).toBe(6);
 })
 
@@ -42,13 +42,13 @@ test('input "1\n2,3" returns 6', () => {
 
 test('input "//;\n1;2;4" returns 7 (the delimiter is ";")', ()=>{
     calculator = new StringCalculator(); 
-    const result = calculator.Add("//;\n1;2;4"); 
+    const result = calculator.add("//;\n1;2;4"); 
     expect(result).toBe(7);
 })
 
 test('input "-1,2" throws exception "Negatives not allowed: -1"', ()=>{
     calculator = new StringCalculator(); //arrange
-    // const result = calculator.Add("-1,2"); // act 
+    // const result = calculator.add("-1,2"); // act 
     expect(() => {
         calculator.Add("-1,2");   
     }).toThrow("Negatives not allowed: -1"); //assert

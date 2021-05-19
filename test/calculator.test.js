@@ -45,3 +45,12 @@ test('input "//;\n1;2;4" returns 7 (the delimiter is ";")', ()=>{
     const result = calculator.Add("//;\n1;2;4"); 
     expect(result).toBe(7);
 })
+
+test('input "-1,2" throws exception "Negatives not allowed: -1"', ()=>{
+    calculator = new StringCalculator(); //arrange
+    // const result = calculator.Add("-1,2"); // act 
+    expect(() => {
+        calculator.Add("-1,2");   
+    }).toThrow("Negatives not allowed: -1"); //assert
+})
+

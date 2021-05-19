@@ -3,14 +3,14 @@ class StringCalculator {
         if (stringOfNumbers === "" ) {
             return 0
         } else if(stringOfNumbers.substring(0,2) === "//" ) { 
-            let semicolon = ';';
-            let shortenString = stringOfNumbers.substring(4)
-            shortenString.split(semicolon);
-            var sum = 0;
-            shortenString.forEach(function (item) {
-                item = Number(item);
-                sum += item;
-            })
+            
+            let shortenString = stringOfNumbers.substring(4);
+            let arrayFromString = [];
+            let semicolon = shortenString[1];
+            arrayFromString =  shortenString.split(semicolon);
+            let sum = +arrayFromString[0] + +arrayFromString[arrayFromString.length -1];
+            console.log("this is arrayFromString ", sum);
+            return sum
         }
 
         else {

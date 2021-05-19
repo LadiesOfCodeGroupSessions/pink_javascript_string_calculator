@@ -53,3 +53,4 @@ test('input "-1,2" throws exception "Negatives not allowed: -1"', ()=>{
     }).toThrow("Negatives not allowed: -1"); //assert
 })
 
+//test.only to run just 1 test 

@@ -3,9 +3,9 @@ class StringCalculator {
     add(stringOfNumbers) {
         const negativeNumberRegex = /-\d/gm;
         const matched = stringOfNumbers.match(negativeNumberRegex);
-
+        
         if (matched) {
-            throw new Error("Negatives not allowed: -1")
+            throw new Error("Negatives not allowed: " + matched)
         }
 
         if (stringOfNumbers === "") {
@@ -21,7 +21,6 @@ class StringCalculator {
         }
     }
 
-    // add an argument to this function that specifies allowable delimiters
     addLogic(stringOfNumbers, allowedDelimiter) {
         let arrayOfStringNumbers = [];
         arrayOfStringNumbers = stringOfNumbers.split(allowedDelimiter);

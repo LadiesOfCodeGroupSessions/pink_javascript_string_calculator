@@ -1,7 +1,13 @@
 class StringCalculator {
 
-
     add(stringOfNumbers) {
+        const negativeNumberRegex = /-\d/gm;
+        const matched = stringOfNumbers.match(negativeNumberRegex);
+
+        if (matched) {
+            throw new Error("Negatives not allowed: -1")
+        }
+
         if (stringOfNumbers === "") {
             return 0
         } else if (stringOfNumbers.substring(0, 2) === "//") {
@@ -9,7 +15,6 @@ class StringCalculator {
             let shortenString = stringOfNumbers.substring(4);
             return this.addLogic(shortenString, delimiter);
         }
-
         else {
             const delimiter = /[,\n]+/;
             return this.addLogic(stringOfNumbers, delimiter);

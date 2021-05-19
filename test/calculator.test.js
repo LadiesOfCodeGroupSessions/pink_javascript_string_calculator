@@ -48,9 +48,8 @@ test('input "//;\n1;2;4" returns 7 (the delimiter is ";")', ()=>{
 
 test('input "-1,2" throws exception "Negatives not allowed: -1"', ()=>{
     calculator = new StringCalculator(); //arrange
-    // const result = calculator.add("-1,2"); // act 
     expect(() => {
-        calculator.Add("-1,2");   
+        calculator.add("-1,2");   // act
     }).toThrow("Negatives not allowed: -1"); //assert
 })
 

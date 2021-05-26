@@ -11,8 +11,17 @@ class StringCalculator {
         if (stringOfNumbers === "") {
             return 0
         } else if (stringOfNumbers.substring(0, 2) === "//") {
-            const delimiter = stringOfNumbers[2];
-            let shortenString = stringOfNumbers.substring(4);
+            let delimiter = "";
+            let shortenString = "";
+            const thirdChar = stringOfNumbers[2];
+            if (thirdChar === "[") {
+                const index = stringOfNumbers.indexOf("]");
+                delimiter = stringOfNumbers.substring(3, index);
+                shortenString = stringOfNumbers.substring(index + 2);
+            } else {
+                delimiter = thirdChar;
+                shortenString = stringOfNumbers.substring(4);
+            }
             return this.addLogic(shortenString, delimiter);
         }
         else {

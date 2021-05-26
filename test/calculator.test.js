@@ -66,3 +66,9 @@ test('Numbers greater than 1000 should be ignored.', ()=>{
     const result = calculator.add("1001,2"); 
     expect(result).toBe(2);
 })
+
+test('Delimiters can be any length, using this syntax: "//[|||]\\n1|||2|||3" returns 6.', ()=>{
+    calculator = new StringCalculator();
+    const result = calculator.add("//[|||]\n1|||2|||3"); 
+    expect(result).toBe(6);
+})

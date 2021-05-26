@@ -32,7 +32,7 @@ test('input 1, 2, 3 and 2 get 8 back', () => {
     expect(result).toBe(8);
 });
 
-test('input "1\n2,3" returns 6', () => {
+test('input "1\\n2,3" returns 6', () => {
     calculator = new StringCalculator();
     const result = calculator.add("1\n2,3");
     expect(result).toBe(6);
@@ -40,7 +40,7 @@ test('input "1\n2,3" returns 6', () => {
 
 
 
-test('input "//;\n1;2;4" returns 7 (the delimiter is ";")', ()=>{
+test('input "//;\\n1;2;4" returns 7 (the delimiter is ";")', ()=>{
     calculator = new StringCalculator(); 
     const result = calculator.add("//;\n1;2;4"); 
     expect(result).toBe(7);
@@ -53,4 +53,10 @@ test('input "-1,2" throws exception "Negatives not allowed: -1"', ()=>{
     }).toThrow("Negatives not allowed: -1"); //assert
 })
 
+test('input "2,-4,3,-5" throws "Negatives not allowed: -4,-5"', ()=>{
+    calculator = new StringCalculator(); //arrange
+    expect(() => {
+        calculator.add("2,-4,3,-5");   // act
+    }).toThrow("Negatives not allowed: -4,-5"); //assert
+})
 //test.only to run just 1 test 

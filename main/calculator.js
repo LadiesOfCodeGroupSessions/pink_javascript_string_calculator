@@ -27,12 +27,12 @@ class StringCalculator {
         var sum = 0;
         arrayOfStringNumbers.forEach(function (item) {
             item = Number(item);
-            sum += item;
+            if(item <= 1000){
+                sum += item;
+            }    
         });
         return sum;
     }
-
-
 }
 
 module.exports = StringCalculator

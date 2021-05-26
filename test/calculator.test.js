@@ -60,3 +60,9 @@ test('input "2,-4,3,-5" throws "Negatives not allowed: -4,-5"', ()=>{
     }).toThrow("Negatives not allowed: -4,-5"); //assert
 })
 //test.only to run just 1 test 
+
+test('Numbers greater than 1000 should be ignored.', ()=>{
+    calculator = new StringCalculator();
+    const result = calculator.add("1001,2"); 
+    expect(result).toBe(2);
+})

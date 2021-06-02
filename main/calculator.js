@@ -14,16 +14,19 @@ class StringCalculator {
             let delimiter = "";
             let shortenString = "";
             let firstIndex = stringOfNumbers.indexOf("[");
-        
+            let delimiterArray = [];
             const thirdChar = stringOfNumbers[2];
             while ( firstIndex >= 0)
             {
                 let secondIndex = stringOfNumbers.indexOf("]")
-                delimiter = stringOfNumbers.substring(firstIndex +1, secondIndex)
+                delimiter = stringOfNumbers.substring(firstIndex + 1, secondIndex)
+                delimiterArray.push(delimiter);
+                stringOfNumbers = stringOfNumbers.substring(secondIndex +1);
                 firstIndex = stringOfNumbers.indexOf("[")
 
             }
-            
+            console.log(delimiterArray);
+
             if (thirdChar === "[") {
                 const index = stringOfNumbers.indexOf("]");
                 delimiter = stringOfNumbers.substring(3, index);

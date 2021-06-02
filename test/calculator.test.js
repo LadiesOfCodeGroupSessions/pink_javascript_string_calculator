@@ -72,3 +72,8 @@ test('Delimiters can be any length, using this syntax: "//[|||]\\n1|||2|||3" ret
     const result = calculator.add("//[|||]\n1|||2|||3"); 
     expect(result).toBe(6);
 })
+test('Allow multiple delimiters, using this syntax: "//[|][%]\n1|2%3"  returns 6.', ()=>{
+    calculator = new StringCalculator();
+    const result = calculator.add("//[|][%]\n1|2%3"); 
+    expect(result).toBe(6);
+})

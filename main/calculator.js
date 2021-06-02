@@ -13,7 +13,17 @@ class StringCalculator {
         } else if (stringOfNumbers.substring(0, 2) === "//") {
             let delimiter = "";
             let shortenString = "";
+            let firstIndex = stringOfNumbers.indexOf("[");
+        
             const thirdChar = stringOfNumbers[2];
+            while ( firstIndex >= 0)
+            {
+                let secondIndex = stringOfNumbers.indexOf("]")
+                delimiter = stringOfNumbers.substring(firstIndex +1, secondIndex)
+                firstIndex = stringOfNumbers.indexOf("[")
+
+            }
+            
             if (thirdChar === "[") {
                 const index = stringOfNumbers.indexOf("]");
                 delimiter = stringOfNumbers.substring(3, index);

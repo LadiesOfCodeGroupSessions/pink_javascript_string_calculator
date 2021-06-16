@@ -36,11 +36,16 @@ class StringCalculator {
 
             }
             // now we have an array of one or more custom delimiters
-            delimiter = `/[${delimiterArray.join("")}]+/`
+            //delimiter = `/[${delimiterArray.join("")}]+/`
+
+            let delimiterString = delimiterArray.join("");
+            let delimiterRegEx = `[${delimiterString}]+`;
+            let delimiterForPassing = new RegExp(delimiterRegEx);
+
             stringOfNumbers = stringOfNumbers.substring(1);
             // we need to transform this array into a regular expression
             // that we can pass to addLogic()
-            return this.addLogic(stringOfNumbers, delimiter);//?to be continued
+            return this.addLogic(stringOfNumbers, delimiterForPassing);//?to be continued
 
             // const thirdChar = stringOfNumbers[2];
             // if (thirdChar === "[") {

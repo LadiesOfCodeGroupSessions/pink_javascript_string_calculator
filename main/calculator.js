@@ -10,7 +10,7 @@ class StringCalculator {
 
         if (stringOfNumbers === "") {
             return 0
-        } else if (stringOfNumbers.substring(0, 2) === "//") {
+        } else if (stringOfNumbers.substring(0, 3) === "//[") {
             // we know that the user wants to specify a custom delimiter
             let delimiter = "";
             let shortenString = "";
@@ -45,18 +45,15 @@ class StringCalculator {
             stringOfNumbers = stringOfNumbers.substring(1);
             // we need to transform this array into a regular expression
             // that we can pass to addLogic()
-            return this.addLogic(stringOfNumbers, delimiterForPassing);//?to be continued
+            return this.addLogic(stringOfNumbers, delimiterForPassing);
+        } else if (stringOfNumbers.substring(0, 2) === "//") {
+            // we know that the user wants to specify a custom delimiter of one character
 
-            // const thirdChar = stringOfNumbers[2];
-            // if (thirdChar === "[") {
-            //     const index = stringOfNumbers.indexOf("]");
-            //     delimiter = stringOfNumbers.substring(3, index);
-            //     shortenString = stringOfNumbers.substring(index + 2);
-            // } else {
-            //     delimiter = thirdChar;
-            //     shortenString = stringOfNumbers.substring(4);
-            // }
-            // return this.addLogic(shortenString, delimiter);
+            let delimiter = stringOfNumbers.charAt(2);
+            stringOfNumbers = stringOfNumbers.substring(4);
+            
+            return this.addLogic(stringOfNumbers, delimiter);
+
         }
         else {
             const delimiter = /[,\n]+/;

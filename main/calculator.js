@@ -37,6 +37,7 @@ class StringCalculator {
             }
             // now we have an array of one or more custom delimiters
             delimiter = `/[${delimiterArray.join("")}]+/`
+            stringOfNumbers = stringOfNumbers.substring(1);
             // we need to transform this array into a regular expression
             // that we can pass to addLogic()
             return this.addLogic(stringOfNumbers, delimiter);//?to be continued
@@ -60,7 +61,7 @@ class StringCalculator {
 
     addLogic(stringOfNumbers, allowedDelimiter) {
         let arrayOfStringNumbers = [];
-        arrayOfStringNumbers = stringOfNumbers.split(allowedDelimiter);
+        arrayOfStringNumbers = stringOfNumbers.split(new RegExp(allowedDelimiter));
         var sum = 0;
         arrayOfStringNumbers.forEach(function (item) {
             item = Number(item);

@@ -39,18 +39,18 @@ class StringCalculator {
             delimiter = `/[${delimiterArray.join("")}]+/`
             // we need to transform this array into a regular expression
             // that we can pass to addLogic()
-            return this.addLogic(?, delimiter);//?to be continued
+            return this.addLogic(stringOfNumbers, delimiter);//?to be continued
 
-            const thirdChar = stringOfNumbers[2];
-            if (thirdChar === "[") {
-                const index = stringOfNumbers.indexOf("]");
-                delimiter = stringOfNumbers.substring(3, index);
-                shortenString = stringOfNumbers.substring(index + 2);
-            } else {
-                delimiter = thirdChar;
-                shortenString = stringOfNumbers.substring(4);
-            }
-            return this.addLogic(shortenString, delimiter);
+            // const thirdChar = stringOfNumbers[2];
+            // if (thirdChar === "[") {
+            //     const index = stringOfNumbers.indexOf("]");
+            //     delimiter = stringOfNumbers.substring(3, index);
+            //     shortenString = stringOfNumbers.substring(index + 2);
+            // } else {
+            //     delimiter = thirdChar;
+            //     shortenString = stringOfNumbers.substring(4);
+            // }
+            // return this.addLogic(shortenString, delimiter);
         }
         else {
             const delimiter = /[,\n]+/;
